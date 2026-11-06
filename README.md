@@ -46,13 +46,13 @@ The `--version` flag answers under Bun, but any real profile boot fails. There i
 Run without installing:
 
 ```sh
-nix run github:<REPO>
+nix run github:smykoff/deepseek-harness.nix
 ```
 
 Install into the user profile:
 
 ```sh
-nix profile install github:<REPO>
+nix profile install github:smykoff/deepseek-harness.nix
 ```
 
 Start the Web UI (defaults to `http://127.0.0.1:3080`):
@@ -65,7 +65,7 @@ dsh web
 
 ```nix
 {
-  inputs.dsh.url = "github:<REPO>";
+  inputs.dsh.url = "github:smykoff/deepseek-harness.nix";
 
   outputs = { nixpkgs, dsh, ... }: {
     nixosConfigurations.host = nixpkgs.lib.nixosSystem {
