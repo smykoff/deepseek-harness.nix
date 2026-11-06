@@ -1,0 +1,5 @@
+.direnv
+result
+result-*
+npm/node_modules
+.inspect

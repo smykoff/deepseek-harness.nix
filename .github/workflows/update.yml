@@ -1,0 +1,29 @@
+name: update
+on:
+  schedule: [{ cron: "0 6 * * *" }]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: experimental-features = nix-command flakes
+      - id: upd
+        run: bash scripts/update.sh
+      - name: commit
+        if: steps.upd.outputs.version != ''
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "dsh: update to ${{ steps.upd.outputs.version }}"
+          git push

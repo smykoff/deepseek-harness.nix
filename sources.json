@@ -1,0 +1,23 @@
+{
+  "version": "0.2.2-rc.1",
+  "npmDepsHash": "sha256-dM/SCqLpa6jQkTECuG00096twqmLc8YVYKFQm4tctdI=",
+  "node": {
+    "version": "24.21.0",
+    "x86_64-linux": {
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.xz",
+      "hash": "sha256-/Y5Z1aURUQ9qKYr7VI8Yx9KxvkBNi0on2U++SfVsstY="
+    },
+    "aarch64-linux": {
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.xz",
+      "hash": "sha256-atEyXtvbVknDebdaI3FHpmbJXU+a6NNA/vLRV10omtI="
+    },
+    "x86_64-darwin": {
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-darwin-x64.tar.gz",
+      "hash": "sha256-FGLLOzBGuBXPjqQ209pFDsGp8R2sflpGsK2lMF1+gJc="
+    },
+    "aarch64-darwin": {
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-darwin-arm64.tar.gz",
+      "hash": "sha256-vtfupTJeEQjzLOUijd1qXw8IpJnuQqp0Qq6lg3AvYFc="
+    }
+  }
+}
