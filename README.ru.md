@@ -23,15 +23,6 @@ dsh: host preparation failed: node-addon-require-builtin unsupported: Unsupporte
 
 Сборка той же версии с [nodejs.org](https://nodejs.org/dist) запускается нормально. Поэтому рантайм скачивается с nodejs.org и закреплён в `sources.json` (`node.version`, URL и хеш на каждую платформу). Не заменяйте его на `pkgs.nodejs_24` — пакет упадёт при старте.
 
-## Почему не Bun
-
-Bun не может запустить `dsh`. Два независимых блокера:
-
-1. Тот же аддон `node-addon-require-builtin` требует внутренностей Node/V8. Под `bun 1.3.13` он падает с `No usable native binding found for node-addon-require-builtin-linux-x64-gnu`.
-2. Бэкенд хранилища (`@deepseek-ai/dsh-storage-sqlite`) импортирует `node:sqlite`, которого в Bun нет.
-
-Флаг `--version` под Bun отвечает, но любой реальный запуск профиля завершается ошибкой. Обходного переключателя нет — нужны изменения в upstream.
-
 ## Поддерживаемые платформы
 
 | Система          | Статус                                                              |

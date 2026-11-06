@@ -23,15 +23,6 @@ dsh: host preparation failed: node-addon-require-builtin unsupported: Unsupporte
 
 The [nodejs.org](https://nodejs.org/dist) build of the same version starts normally. The runtime is therefore fetched from nodejs.org and pinned in `sources.json` (`node.version`, per-platform URL and hash). Do not replace it with `pkgs.nodejs_24` — the package will fail at boot.
 
-## Why not Bun
-
-Bun cannot run `dsh`. Two independent blockers:
-
-1. The same `node-addon-require-builtin` addon needs Node/V8 internals. Under `bun 1.3.13` it fails with `No usable native binding found for node-addon-require-builtin-linux-x64-gnu`.
-2. The storage backend (`@deepseek-ai/dsh-storage-sqlite`) imports `node:sqlite`, which Bun does not implement.
-
-The `--version` flag answers under Bun, but any real profile boot fails. There is no wrapper switch for this; it would require upstream changes.
-
 ## Supported platforms
 
 | System           | Status                                                              |
