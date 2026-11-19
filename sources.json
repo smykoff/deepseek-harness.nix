@@ -1,6 +1,6 @@
 {
-  "version": "0.2.2-rc.1",
-  "npmDepsHash": "sha256-dM/SCqLpa6jQkTECuG00096twqmLc8YVYKFQm4tctdI=",
+  "version": "0.2.2-rc.5",
+  "npmDepsHash": "sha256-fG+QV1ZX/e89OJuTXPTuXUaWk0igYpYzHfV1351Dgsk=",
   "node": {
     "version": "24.21.0",
     "x86_64-linux": {
